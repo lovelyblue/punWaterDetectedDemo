@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIWebView *oWebView;
 
 @end
 
@@ -17,6 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [super viewDidLoad];
+    NSString *urlString = @"http://118.163.66.142/Fenri/Login/?ReturnUrl=%2f";
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    [_oWebView loadRequest:urlRequest];
 }
 
 
